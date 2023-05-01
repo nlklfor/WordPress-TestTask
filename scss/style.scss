@@ -1,0 +1,678 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    list-style: none;
+}
+
+body {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+$primary-color: rgba(105, 185, 157, 1);
+$unactive-color: rgba(142, 142, 142, 1);
+$titled-color: rgba(31, 39, 68, 1);
+$subtitled-color: rgba(5, 68, 87, 1);
+
+
+
+%button {
+    font-weight: 500;
+    font-size: 16px;
+    background: none;
+    color: $primary-color;
+    border: none;
+    gap: 10px;
+    padding: 16px 48px 15px;
+    transition: .2s all;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: white;
+        background: $primary-color;
+        transition: .4s all;
+    }
+}
+
+
+
+//// <HEADER> /////
+
+.header .header_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_container .header_logo {
+    display: flex;
+    align-items: center;
+
+}
+
+.header_logo .header_logo-title {
+    color: $primary-color;
+    font-weight: 500;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.header_container {
+    .header_list {
+        display: flex;
+        align-items: center;
+
+        ul {
+            display: flex;
+            list-style: none;
+
+            li {
+                margin-left: 50px;
+            }
+        }
+
+        .header_list-item {
+            color: $unactive-color;
+            font-weight: 500;
+            font-size: 18px;
+            transition: .4s all;
+            cursor: pointer;
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $primary-color;
+                transition: .4s all;
+                border-bottom: 1px solid;
+                transform: translateY(-5px);
+            }
+
+        }
+    }
+
+    .header_register {
+        display: flex;
+        align-items: center;
+
+        .header_btns {
+            button {
+                @extend %button;
+            }
+        }
+    }
+}
+
+//// </HEADER> /////
+
+
+
+//// <SEARCH CONTAINER> ////
+
+.search {
+    margin-top: 80px;
+    margin-bottom: 130px;
+    background-image: url("../source/background-search.png");
+    background-repeat: no-repeat;
+    background-position: 100%;
+    padding-bottom: 100px;
+
+    .search_title {
+        .search_title-name {
+            color: $primary-color;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        .search_title-main {
+            color: $titled-color;
+            font-weight: 600;
+            font-size: 64px;
+            line-height: 74px;
+        }
+
+        .search_title-desc {
+            color: $unactive-color;
+            font-weight: 400;
+            font-size: 16px;
+            margin-bottom: 64px;
+        }
+    }
+
+    .search_container {
+        .search_container-btns {
+            display: flex;
+
+            a {
+                color: $unactive-color;
+                font-weight: 500;
+                font-size: 24px;
+                transition: .2s all;
+                cursor: pointer;
+                margin-left: 32px;
+
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $primary-color;
+                    transition: .2s all;
+                }
+            }
+        }
+
+        .search_container-block {
+            display: flex;
+            background: #FEFEFF;
+            box-shadow: 35px 35px 65px rgba(146, 106, 120, 0.274);
+            max-width: 750px;
+
+
+            .search_container-list {
+                display: flex;
+                list-style: none;
+                text-align: center;
+                padding: 0;
+
+                .search_container-list-item {
+                    margin-left: 30px;
+
+                    p {
+                        color: $titled-color;
+                        font-weight: 400;
+                        font-size: 18px;
+
+                    }
+
+                    select {
+                        color: $unactive-color;
+                        border: none;
+                        font-weight: 400;
+                        font-size: 18px;
+                        text-align: center
+                    }
+                }
+            }
+
+            .search_button {
+                margin: 0 auto;
+                margin-top: 30px;
+
+                button {
+                    @extend %button;
+
+                }
+
+            }
+
+        }
+    }
+}
+
+//// </SEARCH CONTAINER> ////
+
+
+
+//// <ADVERTISEMENT BLOCK> ////
+
+.advertisement {
+    margin-bottom: 120px;
+
+    .advertisement_title {
+        margin-bottom: 48px;
+
+        .advertisement_title-desc {
+            color: $unactive-color;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        .advertisement_title-name {
+            font-weight: 500;
+            font-size: 18px;
+            color: $primary-color;
+        }
+
+        .advertisement_title-main {
+            font-weight: 600;
+            font-size: 48px;
+            color: $subtitled-color;
+            margin-bottom: 0;
+        }
+    }
+
+    .advertisement_container {
+        display: flex;
+        justify-content: space-between;
+
+        .advertisement_card {
+            max-width: 376px;
+
+            img {
+                margin: 0 auto;
+            }
+
+            h2 {
+                font-weight: 600;
+                font-size: 24px;
+                color: $titled-color;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 16px;
+                color: $unactive-color;
+            }
+
+            .advertisement_card-info {
+                display: flex;
+                align-items: center;
+
+                .price {
+                    font-weight: 600;
+                    font-size: 24px;
+                    color: $primary-color;
+                    margin-right: 40px;
+                }
+
+                mark {
+                    background: white;
+                    color: $titled-color;
+                    font-weight: bold;
+                    font-size: 16px;
+                }
+
+            }
+        }
+
+        .advertisement_card-btn {
+            display: flex;
+            margin: 0 auto;
+
+            button {
+                background: $primary-color;
+                box-shadow: 0px 0px 20px rgba(105, 185, 157, 0.58);
+                justify-content: center;
+                align-items: center;
+                padding: 12px 120px;
+                gap: 8px;
+                font-weight: 500;
+                font-size: 16px;
+                color: white;
+                border: none;
+                transition: .4s all;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $primary-color;
+                    background: white;
+                    border: 1px solid $primary-color;
+                    transition: .4s all;
+                }
+            }
+        }
+    }
+}
+
+//// </ADVERTISEMENT BLOCK> ////
+
+
+
+//// <ADVANTAGES BLOCK> //// 
+
+.advantages {
+    margin-bottom: 200px;
+
+    .advantages_title {
+        margin-bottom: 75px;
+
+        .advantages_title-name {
+            font-weight: 500;
+            font-size: 18px;
+            color: $primary-color;
+        }
+
+        .advantages_title-main {
+            font-weight: 600;
+            font-size: 48px;
+            color: $subtitled-color;
+        }
+    }
+
+    .advantages_container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .advantages_card {
+            max-width: 376px;
+            margin-bottom: 70px;
+
+            h2 {
+                font-weight: 700;
+                font-size: 28px;
+                letter-spacing: 0.5;
+                color: $subtitled-color;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 16px;
+                color: $unactive-color;
+            }
+        }
+    }
+}
+
+//// </ADVANTAGES BLOCK> //// 
+
+
+
+//// <REPUTATION BLOCK> ////
+
+.reputation {
+    display: flex;
+    margin-bottom: 132px;
+
+    .reputation_left {
+        margin-right: 100px;
+
+        .reputation_left-container {
+            position: relative;
+            width: 100%;
+
+            .reputation_left-card {
+                padding: 10px 40px;
+                position: absolute;
+                max-width: 174px;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                background-color: white;
+                box-shadow: 35px 35px 65px rgba(146, 106, 120, 0.16);
+                top: -100px;
+                left: 20%;
+
+                .grade {
+                    font-weight: 400;
+                    font-size: 72px;
+                    margin: 0;
+                    color: $titled-color;
+                }
+
+                .trusted_on {
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: $unactive-color;
+                    margin-bottom: 0;
+                }
+
+                .reviews {
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: $titled-color;
+                }
+            }
+
+            .reputation_left-stat {
+                background-color: white;
+                display: flex;
+                position: absolute;
+                left: 25%;
+                bottom: 7px;
+                padding: 10px 15px;
+
+                .sale {
+                    display: flex;
+                    align-items: center;
+                    margin-right: 20px;
+
+                    h1 {
+                        font-weight: 600;
+                        font-size: 48px;
+                        color: $titled-color;
+
+                    }
+
+                    p {
+                        font-weight: 400;
+                        font-size: 16px;
+                        color: $unactive-color;
+                    }
+                }
+
+                .rent {
+                    display: flex;
+                    align-items: center;
+
+                    h1 {
+                        font-weight: 600;
+                        font-size: 48px;
+                        color: $titled-color;
+                    }
+
+                    p {
+                        font-weight: 400;
+                        font-size: 16px;
+                        color: $unactive-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .reputation_right {
+
+        .reputation_title {
+            .reputation_title-name {
+                font-weight: 500;
+                font-size: 18px;
+                color: $primary-color;
+            }
+
+            .reputation_title-desc {
+                font-weight: 400;
+                font-size: 16px;
+                color: $unactive-color;
+                margin-bottom: 50px;
+            }
+
+            .reputation_title-main {
+                font-weight: 600;
+                font-size: 48px;
+                color: $subtitled-color;
+            }
+
+            button {
+                @extend %button;
+            }
+        }
+    }
+}
+
+//// </REPUTATION BLOCK> ////
+
+
+
+//// <FEEDBACK BLOCK> //// 
+
+.feedback {
+    margin-bottom: 200px;
+
+    .feedback_title {
+        margin-bottom: 130px;
+
+        .feedback_title-name {
+            font-weight: 500;
+            font-size: 18px;
+            color: $primary-color;
+        }
+
+        .feedback_title-main {
+            font-weight: 600;
+            font-size: 48px;
+            color: $subtitled-color;
+        }
+    }
+
+    .feedback_container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .feedback_card {
+            max-width: 376px;
+
+            .feedback_card-title {
+                font-weight: 600;
+                font-size: 18px;
+                color: $titled-color;
+            }
+
+            .feedback_card-desc {
+                font-weight: 400;
+                font-size: 16px;
+                color: $titled-color;
+            }
+
+            .feedback_card-person {
+                display: flex;
+                align-items: center;
+
+                img {
+                    margin-right: 15px;
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .person_details {
+                    h3 {
+                        font-weight: 600;
+                        font-size: 16px;
+                        color: $titled-color;
+                        margin-bottom: 0;
+                    }
+
+                    p {
+                        font-weight: 400;
+                        font-size: 12px;
+                        color: $unactive-color;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+//// </FEEDBACK BLOCK> ////  
+
+
+
+//// <FOOTER BLOCK> /////
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+
+    .footer_container {
+        display: flex;
+        flex-direction: column;
+
+        .footer_logo {
+            display: flex;
+            align-items: center;
+
+            p {
+                color: $primary-color;
+                font-weight: 500;
+                font-size: 24px;
+                margin-left: 10px;
+            }
+        }
+
+        .footer_form {
+            p {
+                font-weight: 400;
+                font-size: 16px;
+                color: $titled-color;
+                margin-bottom: 40px;
+            }
+
+            label {
+                font-weight: 500;
+                font-size: 20px;
+                color: $titled-color;
+            }
+
+            .footer_form-input {
+
+
+                input {
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: $unactive-color;
+                    padding-left: 5px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    padding-right: 50px;
+                    border: none
+                }
+
+                button {
+                    @extend %button;
+                }
+            }
+        }
+    }
+
+    .footer_list {
+        ul{
+            margin-right: 100px;
+        }
+        ul:last-child{
+            margin-right: 0;
+        }
+        display: flex;
+        justify-content: space-around;
+        h2 {
+            font-weight: 500;
+            font-size: 20px;
+            color: $titled-color;
+        }
+
+        li {
+            margin-bottom: 16px;
+
+            a {
+                font-weight: 400;
+                font-size: 16px;
+                color: $unactive-color;
+                transition: .2s all;
+                cursor: pointer;
+
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $titled-color;
+                    transition: .2s all;
+                }
+            }
+        }
+        img{
+            cursor: pointer;
+        }
+        .footer_list-follow{
+            .footer_list-media{
+                display: flex;
+            }
+        }
+    }
+}
+
+//// </FOOTER BLOCK> /////
