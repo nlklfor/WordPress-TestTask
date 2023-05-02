@@ -10,19 +10,48 @@ body {
     margin: 0 auto;
 }
 
-
+/// colors ///
 $primary-color: rgba(105, 185, 157, 1);
 $unactive-color: rgba(142, 142, 142, 1);
 $titled-color: rgba(31, 39, 68, 1);
 $subtitled-color: rgba(5, 68, 87, 1);
+/// colors ///
 
+/// fonts ///
+%titled-font {
+    font-weight: 600;
+    font-size: 48px;
+    color: $subtitled-color;
+    margin-bottom: 0;
+}
+
+%description-font {
+    color: $unactive-color;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+%named-font {
+    font-weight: 500;
+    font-size: 18px;
+    color: $primary-color;
+}
+
+%logo-font {
+    color: $primary-color;
+    font-weight: 500;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+/// fonts ///
 
 
 %button {
     font-weight: 500;
     font-size: 16px;
-    background: none;
-    color: $primary-color;
+    background: $primary-color;
+    color: white;
     border: none;
     gap: 10px;
     padding: 16px 48px 15px;
@@ -32,8 +61,8 @@ $subtitled-color: rgba(5, 68, 87, 1);
     &:hover,
     &:focus,
     &:active {
-        color: white;
-        background: $primary-color;
+        color: $primary-color;
+        background: white;
         transition: .4s all;
     }
 }
@@ -54,24 +83,26 @@ $subtitled-color: rgba(5, 68, 87, 1);
 }
 
 .header_logo .header_logo-title {
-    color: $primary-color;
-    font-weight: 500;
-    font-size: 24px;
-    margin-left: 10px;
+    @extend %logo-font;
 }
 
 .header_container {
     .header_list {
         display: flex;
         align-items: center;
+        justify-content: space-between;
 
         ul {
             display: flex;
             list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
             li {
                 margin-left: 50px;
             }
+
         }
 
         .header_list-item {
@@ -79,6 +110,7 @@ $subtitled-color: rgba(5, 68, 87, 1);
             font-weight: 500;
             font-size: 18px;
             transition: .4s all;
+            margin-right: 50px;
             cursor: pointer;
 
             &:hover,
@@ -90,6 +122,21 @@ $subtitled-color: rgba(5, 68, 87, 1);
                 transform: translateY(-5px);
             }
 
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            margin-right: 100px;
+
+            span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                transition: .3s all ease-in-out;
+                background-color: $primary-color;
+            }
         }
     }
 
@@ -121,9 +168,7 @@ $subtitled-color: rgba(5, 68, 87, 1);
 
     .search_title {
         .search_title-name {
-            color: $primary-color;
-            font-weight: 500;
-            font-size: 18px;
+            @extend %named-font;
         }
 
         .search_title-main {
@@ -134,10 +179,8 @@ $subtitled-color: rgba(5, 68, 87, 1);
         }
 
         .search_title-desc {
-            color: $unactive-color;
-            font-weight: 400;
-            font-size: 16px;
-            margin-bottom: 64px;
+            @extend %description-font;
+            margin-bottom: 40px;
         }
     }
 
@@ -224,22 +267,15 @@ $subtitled-color: rgba(5, 68, 87, 1);
         margin-bottom: 48px;
 
         .advertisement_title-desc {
-            color: $unactive-color;
-            font-weight: 400;
-            font-size: 16px;
+            @extend %description-font;
         }
 
         .advertisement_title-name {
-            font-weight: 500;
-            font-size: 18px;
-            color: $primary-color;
+            @extend %named-font;
         }
 
         .advertisement_title-main {
-            font-weight: 600;
-            font-size: 48px;
-            color: $subtitled-color;
-            margin-bottom: 0;
+            @extend %titled-font;
         }
     }
 
@@ -249,6 +285,17 @@ $subtitled-color: rgba(5, 68, 87, 1);
 
         .advertisement_card {
             max-width: 376px;
+            padding: 20px;
+            transition: .4s all;
+
+            &:hover,
+            &:focus,
+            &:active {
+                transform: translateY(-5px);
+                box-shadow: 2px 8px 8px 0 rgba(0, 0, 0, 0.2);
+                transition: .4s all;
+            }
+
 
             img {
                 margin: 0 auto;
@@ -261,14 +308,13 @@ $subtitled-color: rgba(5, 68, 87, 1);
             }
 
             p {
-                font-weight: 400;
-                font-size: 16px;
-                color: $unactive-color;
+                @extend %description-font;
             }
 
             .advertisement_card-info {
                 display: flex;
                 align-items: center;
+
 
                 .price {
                     font-weight: 600;
@@ -289,30 +335,34 @@ $subtitled-color: rgba(5, 68, 87, 1);
 
         .advertisement_card-btn {
             display: flex;
-            margin: 0 auto;
+            justify-content: center;
 
             button {
-                background: $primary-color;
-                box-shadow: 0px 0px 20px rgba(105, 185, 157, 0.58);
-                justify-content: center;
-                align-items: center;
-                padding: 12px 120px;
-                gap: 8px;
-                font-weight: 500;
-                font-size: 16px;
-                color: white;
-                border: none;
-                transition: .4s all;
-
-                &:hover,
-                &:focus,
-                &:active {
-                    color: $primary-color;
-                    background: white;
-                    border: 1px solid $primary-color;
-                    transition: .4s all;
-                }
+                @extend %button;
             }
+
+            // button {
+            //     background: $primary-color;
+            //     box-shadow: 0px 0px 20px rgba(105, 185, 157, 0.58);
+            //     justify-content: center;
+            //     align-items: center;
+            //     padding: 12px 120px;
+            //     gap: 8px;
+            //     font-weight: 500;
+            //     font-size: 16px;
+            //     color: white;
+            //     border: none;
+            //     transition: .4s all;
+
+            //     &:hover,
+            //     &:focus,
+            //     &:active {
+            //         color: $primary-color;
+            //         background: white;
+            //         border: 1px solid $primary-color;
+            //         transition: .4s all;
+            //     }
+            // }
         }
     }
 }
@@ -330,15 +380,11 @@ $subtitled-color: rgba(5, 68, 87, 1);
         margin-bottom: 75px;
 
         .advantages_title-name {
-            font-weight: 500;
-            font-size: 18px;
-            color: $primary-color;
+            @extend %named-font;
         }
 
         .advantages_title-main {
-            font-weight: 600;
-            font-size: 48px;
-            color: $subtitled-color;
+            @extend %titled-font;
         }
     }
 
@@ -359,9 +405,7 @@ $subtitled-color: rgba(5, 68, 87, 1);
             }
 
             p {
-                font-weight: 400;
-                font-size: 16px;
-                color: $unactive-color;
+                @extend %description-font;
             }
         }
     }
@@ -421,7 +465,7 @@ $subtitled-color: rgba(5, 68, 87, 1);
                 background-color: white;
                 display: flex;
                 position: absolute;
-                left: 25%;
+                left: 20%;
                 bottom: 7px;
                 padding: 10px 15px;
 
@@ -435,6 +479,14 @@ $subtitled-color: rgba(5, 68, 87, 1);
                         font-size: 48px;
                         color: $titled-color;
 
+
+                    }
+
+                    label {
+                        margin-right: 30px;
+                        font-weight: 600;
+                        font-size: 48px;
+                        color: $titled-color;
                     }
 
                     p {
@@ -449,6 +501,14 @@ $subtitled-color: rgba(5, 68, 87, 1);
                     align-items: center;
 
                     h1 {
+                        font-weight: 600;
+                        font-size: 48px;
+                        color: $titled-color;
+
+                    }
+
+                    label {
+                        margin-right: 30px;
                         font-weight: 600;
                         font-size: 48px;
                         color: $titled-color;
@@ -468,22 +528,16 @@ $subtitled-color: rgba(5, 68, 87, 1);
 
         .reputation_title {
             .reputation_title-name {
-                font-weight: 500;
-                font-size: 18px;
-                color: $primary-color;
+                @extend %named-font;
             }
 
             .reputation_title-desc {
-                font-weight: 400;
-                font-size: 16px;
-                color: $unactive-color;
-                margin-bottom: 50px;
+                @extend %description-font;
+                margin-bottom: 40px;
             }
 
             .reputation_title-main {
-                font-weight: 600;
-                font-size: 48px;
-                color: $subtitled-color;
+                @extend %titled-font;
             }
 
             button {
@@ -506,15 +560,11 @@ $subtitled-color: rgba(5, 68, 87, 1);
         margin-bottom: 130px;
 
         .feedback_title-name {
-            font-weight: 500;
-            font-size: 18px;
-            color: $primary-color;
+            @extend %named-font;
         }
 
         .feedback_title-main {
-            font-weight: 600;
-            font-size: 48px;
-            color: $subtitled-color;
+            @extend %titled-font;
         }
     }
 
@@ -588,10 +638,7 @@ $subtitled-color: rgba(5, 68, 87, 1);
             align-items: center;
 
             p {
-                color: $primary-color;
-                font-weight: 500;
-                font-size: 24px;
-                margin-left: 10px;
+                @extend %logo-font;
             }
         }
 
@@ -631,14 +678,17 @@ $subtitled-color: rgba(5, 68, 87, 1);
     }
 
     .footer_list {
-        ul{
+        ul {
             margin-right: 100px;
         }
-        ul:last-child{
+
+        ul:last-child {
             margin-right: 0;
         }
+
         display: flex;
         justify-content: space-around;
+
         h2 {
             font-weight: 500;
             font-size: 20px;
@@ -664,11 +714,13 @@ $subtitled-color: rgba(5, 68, 87, 1);
                 }
             }
         }
-        img{
+
+        img {
             cursor: pointer;
         }
-        .footer_list-follow{
-            .footer_list-media{
+
+        .footer_list-follow {
+            .footer_list-media {
                 display: flex;
             }
         }
@@ -676,3 +728,212 @@ $subtitled-color: rgba(5, 68, 87, 1);
 }
 
 //// </FOOTER BLOCK> /////
+
+
+
+
+/// MEDIA ADAPTIVE ///
+@media screen and (max-width: 1128px) {
+    .feedback {
+        .feedback_container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .feedback_card {
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    .advertisement {
+        .advertisement_title {
+            text-align: center;
+        }
+
+        .advertisement_container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .advertisement_card {
+                margin-bottom: 50px;
+                border: 2px solid rgba(75, 75, 75, 0.233);
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .advantages {
+        .advantages_title {
+            text-align: center;
+        }
+    }
+
+    .feedback {
+        .feedback_title {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    body.active {
+        overflow: hidden;
+    }
+
+    .header {
+        .header_container {
+            nav {
+                .hamburger {
+                    display: block;
+                }
+
+                .hamburger.active .bar:nth-child(2) {
+                    opacity: 0;
+                }
+
+                .hamburger.active .bar:nth-child(1) {
+                    transform: translateY(8px) rotate(45deg);
+                }
+
+                .hamburger.active .bar:nth-child(3) {
+                    transform: translateY(-8px) rotate(-45deg);
+                }
+
+                .header_nav {
+                    position: fixed;
+                    left: -100%;
+                    top: 70px;
+                    gap: 0;
+                    flex-direction: column;
+                    background-color: rgb(255, 255, 255);
+                    width: 100%;
+                    text-align: center;
+                    transition: .2s all;
+                    padding-bottom: 20px;
+
+                    li {
+                        margin: 16px 0;
+                    }
+                }
+
+                .header_register {}
+
+                .header_nav.active {
+                    left: 0;
+                    background-color: white;
+
+
+                }
+            }
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 920px) {
+    .reputation {
+        display: flex;
+        flex-direction: column;
+
+        .reputation_left {
+            margin: 0 auto;
+        }
+
+        .reputation_right {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+        }
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .search {
+
+        .search_title {
+            .search_title-desc {
+                color: $titled-color;
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .advantages {
+        .advantages_container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+}
+
+@media screen and (max-width: 680px) {
+    .search {
+        .search_container {
+            .search_container-block {
+                max-width: 250px;
+                align-items: center;
+                padding-bottom: 20px;
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: left;
+
+                }
+
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+    .reputation {
+        .reputation_left {
+            display: flex;
+            position: relative;
+
+            #aboutUs {
+                display: none;
+            }
+
+            .reputation_left-container {
+                position: relative;
+                .reputation_left-stat {
+                    flex-direction: column;
+                    display: flex;
+                    position: relative;
+                   justify-content: center;
+
+                   
+                }
+
+                .reputation_left-card {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+    .footer {
+        .footer_list {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+}
+
+/// MEDIA ADAPTIVE ///

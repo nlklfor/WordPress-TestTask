@@ -20,8 +20,8 @@
                 <img src="source/logo.png" class="header_logo-img" alt="Website Logo" width="40" height="40">
                 <p class="header_logo-title">Mulih</p>
             </div>
-            <div class="header_list">
-                <ul>
+            <nav class="header_list">
+                <ul class="header_nav">
                     <li class="header_list-item">
                         <a>Home</a>
                     </li>
@@ -37,14 +37,19 @@
                     <li class="header_list-item">
                         <a>Contact</a>
                     </li>
+                    <div class="header_register">
+                        <div class="header_btns">
+                            <button class="header_btns-reg">Sign In</button>
+                            <button class="header_btns-log">Login</button>
+                        </div>
+                    </div>
                 </ul>
-            </div>
-            <div class="header_register">
-                <div class="header_btns">
-                    <button class="header_btns-reg">Sign In</button>
-                    <button class="header_btns-log">Login</button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
-            </div>
+            </nav>
         </div>
     </header>
     <div class="search">
@@ -210,21 +215,23 @@
     <div class="reputation">
         <div class="reputation_left">
             <div class="reputation_left-container">
-                <img src="./source/abloutus-bg.png" alt="About Us">
+                <img id="aboutUs" src="./source/abloutus-bg.png" alt="About Us">
                 <div class="reputation_left-card">
                     <img src="./source/square.svg" alt="grade">
-                    <p class="grade">4.8</p>
+                    <p class="grade" id="num3"></p>
                     <img src="./source/stars.svg" alt="start">
                     <p class="trusted_on">Trusted on</p>
                     <p class="reviews">500+ Reviews</p>
                 </div>
                 <div class="reputation_left-stat">
                     <div class="sale">
-                        <h1>250+</h1>
+                        <h1 id="num1"></h1>
+                        <label>+</label>
                         <p>Property <br> Sale</p>
                     </div>
                     <div class="rent">
-                        <h1>550+</h1>
+                        <h1 id="num2"></h1>
+                        <label>+</label>
                         <p>Apartament <br> Rent</p>
                     </div>
                 </div>
@@ -306,7 +313,7 @@
             <div class="footer_form">
                 <p class="footer_form-desc">We have built our reputation as true local <br> area experts.</p>
                 <div class="footer_form-input">
-                <label class="footer_newsletter">Newsletter</label>
+                    <label class="footer_newsletter">Newsletter</label>
                     <form>
                         <input type="text" id="mail" name="mail" placeholder="example@gmail.com">
                         <button class="footer_form-btn">Send</button>
@@ -358,6 +365,8 @@
             </ul>
         </div>
     </footer>
+    <script src="script/countUp.min.js"></script>
+    <script src="script/script.js"></script>
 </body>
 
 </html>
