@@ -18,7 +18,7 @@ body {
   margin-bottom: 0;
 }
 
-.reputation .reputation_right .reputation_title .reputation_title-desc, .advantages .advantages_container .advantages_card p, .advertisement .advertisement_container .advertisement_card p, .advertisement .advertisement_title .advertisement_title-desc, .search .search_title .search_title-desc {
+.reputation .reputation_right .reputation_title .reputation_title-desc, .advantages .advantages_container .advantages_card p, .advertisement .advertisement_container .advertisement_card .advertisement_card-info p, .advertisement .advertisement_title .advertisement_title-desc, .search .search_title .search_title-desc {
   color: rgb(142, 142, 142);
   font-weight: 400;
   font-size: 16px;
@@ -227,6 +227,7 @@ body {
           justify-content: space-between;
 }
 .advertisement .advertisement_container .advertisement_card {
+  position: relative;
   max-width: 376px;
   padding: 20px;
   -webkit-transition: 0.4s all;
@@ -248,19 +249,28 @@ body {
   font-size: 24px;
   color: rgb(31, 39, 68);
 }
+.advertisement .advertisement_container .advertisement_card .advertisement_card-price {
+  position: absolute;
+  top: 35%;
+  left: 30px;
+  background-color: rgba(254, 254, 255, 0.8078431373);
+  border-radius: 10px;
+}
+.advertisement .advertisement_container .advertisement_card .advertisement_card-price .price {
+  margin: 0;
+  padding: 5px 10px;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgb(105, 185, 157);
+}
 .advertisement .advertisement_container .advertisement_card .advertisement_card-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.advertisement .advertisement_container .advertisement_card .advertisement_card-info .price {
-  font-weight: 600;
-  font-size: 24px;
-  color: rgb(105, 185, 157);
-  margin-right: 40px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .advertisement .advertisement_container .advertisement_card .advertisement_card-info mark {
   background: white;

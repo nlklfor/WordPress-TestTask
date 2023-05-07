@@ -284,6 +284,7 @@ $subtitled-color: rgba(5, 68, 87, 1);
         justify-content: space-between;
 
         .advertisement_card {
+            position: relative;
             max-width: 376px;
             padding: 20px;
             transition: .4s all;
@@ -307,21 +308,30 @@ $subtitled-color: rgba(5, 68, 87, 1);
                 color: $titled-color;
             }
 
-            p {
-                @extend %description-font;
+            
+            .advertisement_card-price{
+                position: absolute;
+                top: 35%;
+                left: 30px;
+                background-color: #fefeffce;
+                border-radius: 10px;
+                .price {
+                    margin: 0;
+                    padding: 5px 10px;
+                    font-weight: 600;
+                    font-size: 16px;
+                    color: $primary-color;
+                    
+                }
             }
-
             .advertisement_card-info {
                 display: flex;
-                align-items: center;
-
-
-                .price {
-                    font-weight: 600;
-                    font-size: 24px;
-                    color: $primary-color;
-                    margin-right: 40px;
+                flex-direction: column;
+                
+                p {
+                    @extend %description-font;
                 }
+
 
                 mark {
                     background: white;
